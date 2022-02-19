@@ -1,0 +1,19 @@
+<div fxLayoutAlign="end center" style="height: 100%;">
+  <mat-card>
+      <mat-toolbar color="primary"> Login page</mat-toolbar>
+      <form fxLayoutAlign="stretch" fxLayout="column">
+          <mat-form-field appearance="fill">
+              <input matInput #username placeholder="Username">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+              <mat-label>Enter your password</mat-label>
+              <input matInput #password [type]="hidePassword ?   'password':  'text'">
+              <button type ="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+              <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          <button mat-button color="primary" type="submit" (click)="login(username.value,password.value)">Login</button>
+      </form>
+  </mat-card>
+</div>

@@ -1,0 +1,59 @@
+
+<div fxLayoutAlign="end center" fxFlexAlign="stretch">
+   <mat-card>
+      <mat-toolbar color="primary"> Sing-Up</mat-toolbar>
+      <form fxLayoutAlign="stretch" fxLayout="column">
+
+         <mat-form-field appearance="fill">
+            <input matInput #firstName name ="firstName" placeholder="First name">
+         </mat-form-field>
+
+         <mat-form-field appearance="fill">
+            <input matInput #lastName placeholder="Last name">
+         </mat-form-field>
+
+         <mat-form-field appearance="fill">
+            <input matInput #username placeholder="Username">
+         </mat-form-field>
+
+         <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput #email placeholder="pat@example.com" required>
+         </mat-form-field>
+
+         <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hidePassword ? 'password' : 'text'" #password  (keyup) ="setSlider(password.value)" >
+            <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+               [attr.aria-label]="'hidePassword password'" [attr.aria-pressed]="hidePassword">
+               <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-progress-bar mode="determinate" [value]="25*strongPassword"></mat-progress-bar>
+         </mat-form-field>
+
+         <mat-form-field appearance="fill">
+            <mat-label>Confirm your password</mat-label>
+            <input matInput #passwordConfirmation type ="password" >
+         </mat-form-field>
+
+         <mat-form-field appearance="fill"> 
+            <mat-label>Birth date</mat-label>
+            <input matInput [matDatepicker]="dp3" disabled>
+            <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+         </mat-form-field>
+   
+         <mat-form-field appearance="fill">
+            <mat-label>Gender</mat-label>
+            <mat-select matInput #gender disableRipple>
+               <mat-option value="0">Male</mat-option>
+               <mat-option value="1">Female</mat-option>
+               <mat-option value="2">Other</mat-option>
+            </mat-select>
+         </mat-form-field>
+         <button  mat-button color="primary" type="button" (click)="singUp(
+            firstName.value,lastName.value,username.value,email.value,password.value,passwordConfirmation.value,gender.value
+         )" name ="singUp">Sing Up</button>
+      </form>
+   </mat-card>
+</div>

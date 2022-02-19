@@ -1,0 +1,12 @@
+<mat-tab-group [selectedIndex]='selected.value' (selectedTabChange)="onTabChanged($event);">
+    <div *ngFor="let openTab of openTabs;let index = index">
+        <mat-tab class='mat-tab-strached'>
+            <ng-template mat-tab-label>
+                <label>{{openTab.name}}</label>
+                <mat-icon class="icon-display" (click)="closeTab(index)">close</mat-icon>
+            </ng-template>
+        </mat-tab>
+    </div>
+</mat-tab-group>
+<app-edit-profile *ngIf="getCurrentTabType(selected.value) === 'PROFILE'"></app-edit-profile>
+<app-my-team *ngIf="getCurrentTabType(selected.value) === 'MY_TEAM'"></app-my-team>

@@ -1,0 +1,49 @@
+mat-sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+mat-sidenav {
+  width: 15%;
+}
+
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+
+.example-tree .mat-nested-tree-node div[role=group] {
+  padding-left:2%;
+}
+
+.example-tree div[role=group] > .mat-tree-node {
+  padding-left: 1%;
+}
+.mat-tree-node {
+  min-height: 0.0em !important;
+  height: 2.2em;
+}
+
+.example-button-row {
+  display: table-cell;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+span {
+  cursor: pointer;
+}
+
+

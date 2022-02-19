@@ -1,0 +1,11 @@
+mat-card {
+    width: calc(100% - 70px);
+    height: calc(100% - 70px);
+    display: inline-block !important;
+  }
+
+  mat-card-content{
+    display: inline-block !important;
+ 
+  }
+
